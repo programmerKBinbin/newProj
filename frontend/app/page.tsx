@@ -5,6 +5,9 @@ import Onboarding from './components/Onboarding'
 import MainScreen from './components/MainScreen'
 import { apiClient } from './lib/api'
 
+// Указываем Next.js, что страница должна рендериться динамически
+export const dynamic = 'force-dynamic'
+
 export default function Home() {
   const [initData, setInitData] = useState<string | null>(null)
   const [onboardingCompleted, setOnboardingCompleted] = useState<boolean | null>(null)
