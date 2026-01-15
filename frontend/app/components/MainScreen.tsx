@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import { useRouter } from 'next/navigation'
 import { apiClient } from '../lib/api'
 
 interface MainScreenProps {
@@ -8,6 +9,7 @@ interface MainScreenProps {
 }
 
 export default function MainScreen({ initData }: MainScreenProps) {
+  const router = useRouter()
   const [clone, setClone] = useState<any>(null)
   const [loading, setLoading] = useState(true)
 
@@ -51,7 +53,7 @@ export default function MainScreen({ initData }: MainScreenProps) {
             Запиши свой первый дневник, чтобы создать ИИ-клона
           </p>
           <button
-            onClick={() => window.location.href = '/diary'}
+            onClick={() => router.push('/diary')}
             className="bg-blue-500 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-600 transition"
           >
             Записать дневник
@@ -93,13 +95,13 @@ export default function MainScreen({ initData }: MainScreenProps) {
 
           <div className="space-y-2">
             <button
-              onClick={() => window.location.href = '/diary'}
+              onClick={() => router.push('/diary')}
               className="w-full bg-blue-500 text-white py-3 rounded-lg font-semibold hover:bg-blue-600 transition"
             >
               Записать дневник
             </button>
             <button
-              onClick={() => window.location.href = '/ask'}
+              onClick={() => router.push('/ask')}
               className="w-full bg-gray-200 text-gray-800 py-3 rounded-lg font-semibold hover:bg-gray-300 transition"
             >
               Спросить у клона
