@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   description: 'Платформа ИИ-клонов',
 }
 
+// Указываем Next.js, что страницы должны рендериться динамически
+export const dynamic = 'force-dynamic'
+
 export default function RootLayout({
   children,
 }: {
