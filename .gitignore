@@ -1,5 +1,6 @@
 # Dependencies
 node_modules/
+**/node_modules/
 __pycache__/
 *.pyc
 *.pyo
@@ -58,3 +59,4 @@ htmlcov/
 
 # Alembic
 alembic/versions/*.pyc
+.vercel
